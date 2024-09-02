@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoothBiz - Home</title>
+    <link rel="stylesheet" href="../styles/Event-Track.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="HomePage.html" style="text-decoration: none; color: black">BoothBiz</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Event-Track.html">Events</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="Sign-in.html" class="sign-in" style="text-decoration: none">Sign In</a>
+                <a href="Sign-up.html" class="sign-up" style="text-decoration: none">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="search-container">
+
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    City
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Surat</a>
+                    <a href="#">Ahmedabad</a>
+                    <a href="#">Baroda</a>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search Events" />
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+
+        <div class="event-card-container">
+            <div class="event-card"
+                onclick="showEventDetails('XYZ Event', 'Surat', '30-08-2024', 'This is a description of XYZ Event.', '../assets/HomePage.png')">
+                <div>
+                    <img src="../assets/HomePage.png" alt="Event Image" class="event-image" />
+                    <div class="event-info">
+                        <hr />
+                        <h3>XYZ Event</h3>
+                        <p>Surat</p>
+                        <p>30-08-2024</p>
+                        <button class="view-detail-btn">View Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card"
+                onclick="showEventDetails('XYZ Event', 'Surat', '30-08-2024', 'This is a description of XYZ Event.', '../assets/HomePage.png')">
+                <div>
+                    <img src="../assets/HomePage.png" alt="Event Image" class="event-image" />
+                    <div class="event-info">
+                        <hr />
+                        <h3>XYZ Event</h3>
+                        <p>Surat</p>
+                        <p>30-08-2024</p>
+                        <button class="view-detail-btn">View Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card"
+                onclick="showEventDetails('XYZ Event', 'Surat', '30-08-2024', 'This is a description of XYZ Event.', '../assets/HomePage.png')">
+                <div>
+                    <img src="../assets/HomePage.png" alt="Event Image" class="event-image" />
+                    <div class="event-info">
+                        <hr />
+                        <h3>XYZ Event</h3>
+                        <p>Surat</p>
+                        <p>30-08-2024</p>
+                        <button class="view-detail-btn">View Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card"
+                onclick="showEventDetails('XYZ Event', 'Surat', '30-08-2024', 'This is a description of XYZ Event.', '../assets/HomePage.png')">
+                <div>
+                    <img src="../assets/HomePage.png" alt="Event Image" class="event-image" />
+                    <div class="event-info">
+                        <hr />
+                        <h3>XYZ Event</h3>
+                        <p>Surat</p>
+                        <p>30-08-2024</p>
+                        <button class="view-detail-btn">View Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card"
+                onclick="showEventDetails('XYZ Event', 'Surat', '30-08-2024', 'This is a description of XYZ Event.', '../assets/HomePage.png')">
+                <div>
+                    <img src="../assets/HomePage.png" alt="Event Image" class="event-image" />
+                    <div class="event-info">
+                        <hr />
+                        <h3>XYZ Event</h3>
+                        <p>Surat</p>
+                        <p>30-08-2024</p>
+                        <button class="view-detail-btn">View Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat the event-card div for additional events -->
+        </div>
+    </main>
+
+    <!-- Event Details Modal -->
+    <div id="event-detail-modal" class="event-detail-modal">
+        <div class="event-detail-content">
+            <span class="close-btn">&times;</span>
+            <img src="" alt="Event Image" class="event-detail-image" />
+            <h3 id="event-detail-title"></h3>
+            <p id="event-detail-location"></p>
+            <p id="event-detail-date"></p>
+            <p id="event-detail-description"></p>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Function to show event details
+        function showEventDetails(title, location, date, description, imageSrc) {
+            // Get the event detail modal and its content elements
+            const modal = document.getElementById("event-detail-modal");
+            const modalImage = modal.querySelector(".event-detail-image");
+            const modalTitle = modal.querySelector("#event-detail-title");
+            const modalLocation = modal.querySelector("#event-detail-location");
+            const modalDate = modal.querySelector("#event-detail-date");
+            const modalDescription = modal.querySelector(
+                "#event-detail-description"
+            );
+
+            // Set the content of the modal
+            modalImage.src = imageSrc;
+            modalTitle.textContent = title;
+            modalLocation.textContent = location;
+            modalDate.textContent = date;
+            modalDescription.textContent = description;
+
+            // Show the modal
+            modal.style.display = "flex";
+
+            // Hide overflow on body
+            document.body.style.overflow = "hidden";
+        }
+
+        // Function to close the event details modal
+        function closeEventDetails() {
+            // Get the event detail modal
+            const modal = document.getElementById("event-detail-modal");
+
+            // Hide the modal
+            modal.style.display = "none";
+
+            // Restore overflow on body
+            document.body.style.overflow = "auto";
+        }
+
+        // Attach close event to the close button
+        document
+            .querySelector(".close-btn")
+            .addEventListener("click", closeEventDetails);
+
+        // Attach close event to click outside of the modal content
+        document
+            .getElementById("event-detail-modal")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    closeEventDetails();
+                }
+            });
+    </script>
+
+    
+</body>
+
+</html>
